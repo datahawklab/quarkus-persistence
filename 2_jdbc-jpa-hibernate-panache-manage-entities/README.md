@@ -39,7 +39,7 @@ mvn clean install
       </exclusions>
 </dependency>
 
-### to map a pojo to a panache entity:
+### to map a regualar pojo to a panache entity add an orm.xml to jdbc-jpa-panache/src/main/resources/META-INF/orm.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -69,7 +69,7 @@ mvn clean install
 
 ### mark external jpa entity as panache entity
 
-in external project add panache-archive.marker
+in external project that has jpa entity add panache-archive.marker
 
 ```bash
 mkdir -p jdbc-jpa/src/main/resources/META-INF
