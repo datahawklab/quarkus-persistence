@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.agoncal.quarkus.panache.model.Publisher;
 
 @QuarkusTest
-public class PublisaherRepositoryTest {
+public class PublisherRepositoryTest {
 
   @Test
   @TestTransaction
