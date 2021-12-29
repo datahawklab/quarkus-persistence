@@ -1,0 +1,9 @@
+---
+modelPackage: com.redhat.msa.todo.models
+apiPackage: com.redhat.msa.todo.api
+invokerPackage: com.redhat.msa.todo
+sourceFolder: src/test/java
+hideGenerationTimestamp: true
+booleanGetterPrefix: is
+serializationLibrary: gson
+dateLibrary: java8

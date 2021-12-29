@@ -1,0 +1,13 @@
+**/.idea
+**/*.iml
+**/.classpath
+**/.project
+**/.settings
+**/src/gen/
+todo-server/src/test
+build.sbt
+git_push.sh
+.travis.yml
+gradle
+docs
+.vscode

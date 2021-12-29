@@ -1,0 +1,11 @@
+---
+modelPackage: com.redhat.msa.todo.models
+apiPackage: com.redhat.msa.todo.api
+invokerPackage: com.redhat.msa.todo
+groupId: com.redhat.msa
+artifactId: todo-server
+dateLibrary: java8
+booleanGetterPrefix: is
+artifactVersion: 1.0.0
+generateJbossDeploymentDescriptor: false
+hideGenerationTimestamp: true

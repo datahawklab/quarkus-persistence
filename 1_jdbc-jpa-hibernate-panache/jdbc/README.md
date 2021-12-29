@@ -1,4 +1,8 @@
 # artist Project
+if you're using wsl2 on windows and have linux running, connect to wsl ubuntu or whatever you have
+
+cd jdbc
+mvn quarkus:dev
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 

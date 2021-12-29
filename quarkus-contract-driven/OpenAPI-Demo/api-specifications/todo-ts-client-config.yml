@@ -1,0 +1,7 @@
+---
+allowUnicodeIdentifiers: true
+supportES6: true
+npmName: todo-client-sdk
+npmVersion: 1.0.1
+snapshot: false
+npmRepository: http://nexus:8081/repository/npm-all/

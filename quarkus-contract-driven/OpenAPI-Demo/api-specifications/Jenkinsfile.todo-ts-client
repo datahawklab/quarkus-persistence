@@ -1,0 +1,45 @@
+import groovy.json.JsonSlurper
+import jline.internal.InputStreamReader
+
+pipeline {
+  agent {
+    label 'jenkins-slave-npm'
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+
+  stages {
+    stage('Set up NPM credentials') {
+      steps {
+        sh 'printf "always-auth=true\n_auth=" >> ~/.npmrc'
+        sh 'echo "YWRtaW46YWRtaW4xMjM=" >> ~/.npmrc'
+        sh 'echo "registry=http://nexus:8081/repository/npm-group/" >> ~/.npmrc'
+        sh 'echo "email=josphill@redhat.com" >> ~/.npmrc'
+        sh 'cat ~/.npmrc'
+      }
+    }
+    stage('Generate client SDK') {
+      steps {
+        sh 'npx @openapitools/openapi-generator-cli generate -i openapi.yml -g typescript-axios -o todo-ts-client -c todo-ts-client-config.yml'
+      }
+    }
+    stage('Build TS Client SDK') {
+      steps {
+        sh './post-process-package-json.js todo-ts-client/package.json'
+        dir("todo-ts-client") {
+          sh 'npm install'
+          sh 'npm run build'
+        }
+      }
+    }
+    stage('Publish SDK To Nexus') {
+      steps {
+        dir("todo-ts-client") {
+          sh 'npm publish'
+        }
+      }
+    }
+  }
+}

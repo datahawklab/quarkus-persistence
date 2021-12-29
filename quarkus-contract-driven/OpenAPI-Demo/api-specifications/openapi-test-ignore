@@ -1,0 +1,10 @@
+**/*.xml
+**/*gradle*
+docs/
+*.sh
+*sbt
+README.md
+gradle/
+/.travis.yml
+**/models/
+/.gitignore
