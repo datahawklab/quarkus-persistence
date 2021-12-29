@@ -1,4 +1,3 @@
-
 ### create the spec
 
 place openapi.yml in the root directory with any spec
